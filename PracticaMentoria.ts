@@ -10,6 +10,10 @@ function calculoIva(precio,iva){
     return precio * iva;
 }
 let facturaSinIva = [10,2.5,100];
-// let facturaConIva  = facturaSinIva.map(precio => calculoIva(precio,0.25));
 let facturaConIva  = facturaSinIva.reduce((total,producto) => total += calculoIva(producto,0.25),0);
 console.log("Total de factura con 25% de IVA:"+ facturaConIva);
+
+
+let facturaConIvaPredeterminado  = facturaSinIva.reduce((total,producto) => total += calculoIva(producto,0),0);
+console.log("Total de factura con 21% de IVA:"+ facturaConIvaPredeterminado);
+
